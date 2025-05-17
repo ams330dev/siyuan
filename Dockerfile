@@ -42,6 +42,7 @@ COPY --from=GO_BUILD /opt/siyuan/ /opt/siyuan/
 
 RUN apk add --no-cache ca-certificates tzdata su-exec && \
     chmod +x /opt/siyuan/entrypoint.sh
+    mkdir -p /siyuan/workspace
 
 ENV TZ=Asia/Shanghai
 ENV HOME=/home/siyuan
